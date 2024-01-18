@@ -1,0 +1,518 @@
+<div class="main-container">
+  <div class="players-container">
+    <h2 class="players-container__title">Список игроков</h2>
+
+    <div
+      cdkDropList
+      #playersList="cdkDropList"
+      [cdkDropListData]="players"
+      [cdkDropListConnectedTo]="[
+        fieldList1,
+        fieldList2,
+        fieldList3,
+        fieldList4,
+        fieldList5,
+        fieldList6,
+        fieldList7,
+        fieldList8,
+        fieldList9,
+        fieldList10,
+        fieldList11
+      ]"
+      class="players-list"
+      (cdkDropListDropped)="dropToList($event)"
+    >
+      @for (item of players; track item) {
+      <div class="player-data" cdkDrag>
+        <div class="player-avatar">
+          <img
+            src="{{ item.photo }}"
+            alt="Football player"
+            class="player-data__img"
+          />
+          <img
+            *cdkDragPreview
+            src="{{ item.photo }}"
+            alt="Football player"
+            class="player-data__img"
+          />
+          <div class="player-data__number">
+            {{ item.number }}
+          </div>
+        </div>
+        <div class="player-item__name">
+          {{ item.firstName }} {{ item.lastName }}
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="field-container">
+    <div class="field-container__background">
+      <div class="field-list">
+        <div
+          cdkDropList
+          #fieldList1="cdkDropList"
+          [cdkDropListData]="fieldPosition1"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList2,
+            fieldList3,
+            fieldList4,
+            fieldList5,
+            fieldList6,
+            fieldList7,
+            fieldList8,
+            fieldList9,
+            fieldList10,
+            fieldList11
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-1"
+          [ngClass]="{ 'field-position__filled': fieldPosition1.length }"
+        >
+          @for (item of fieldPosition1; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+
+        <div
+          cdkDropList
+          #fieldList2="cdkDropList"
+          [cdkDropListData]="fieldPosition2"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList1,
+            fieldList3,
+            fieldList4,
+            fieldList5,
+            fieldList6,
+            fieldList7,
+            fieldList8,
+            fieldList9,
+            fieldList10,
+            fieldList11
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-2"
+          [ngClass]="{ 'field-position__filled': fieldPosition2.length }"
+        >
+          @for (item of fieldPosition2; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+
+        <div
+          cdkDropList
+          #fieldList3="cdkDropList"
+          [cdkDropListData]="fieldPosition3"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList1,
+            fieldList2,
+            fieldList4,
+            fieldList5,
+            fieldList6,
+            fieldList7,
+            fieldList8,
+            fieldList9,
+            fieldList10,
+            fieldList11
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-3"
+          [ngClass]="{ 'field-position__filled': fieldPosition3.length }"
+        >
+          @for (item of fieldPosition3; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+
+        <div
+          cdkDropList
+          #fieldList4="cdkDropList"
+          [cdkDropListData]="fieldPosition4"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList1,
+            fieldList2,
+            fieldList3,
+            fieldList5,
+            fieldList6,
+            fieldList7,
+            fieldList8,
+            fieldList9,
+            fieldList10,
+            fieldList11
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-4"
+          [ngClass]="{ 'field-position__filled': fieldPosition4.length }"
+        >
+          @for (item of fieldPosition4; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+
+        <div
+          cdkDropList
+          #fieldList5="cdkDropList"
+          [cdkDropListData]="fieldPosition5"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList1,
+            fieldList2,
+            fieldList3,
+            fieldList4,
+            fieldList6,
+            fieldList7,
+            fieldList8,
+            fieldList9,
+            fieldList10,
+            fieldList11
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-5"
+          [ngClass]="{ 'field-position__filled': fieldPosition5.length }"
+        >
+          @for (item of fieldPosition5; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+
+        <div
+          cdkDropList
+          #fieldList6="cdkDropList"
+          [cdkDropListData]="fieldPosition6"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList1,
+            fieldList2,
+            fieldList3,
+            fieldList4,
+            fieldList5,
+            fieldList7,
+            fieldList8,
+            fieldList9,
+            fieldList10,
+            fieldList11
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-6"
+          [ngClass]="{ 'field-position__filled': fieldPosition6.length }"
+        >
+          @for (item of fieldPosition6; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+
+        <div
+          cdkDropList
+          #fieldList7="cdkDropList"
+          [cdkDropListData]="fieldPosition7"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList1,
+            fieldList2,
+            fieldList3,
+            fieldList4,
+            fieldList5,
+            fieldList6,
+            fieldList8,
+            fieldList9,
+            fieldList10,
+            fieldList11
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-7"
+          [ngClass]="{ 'field-position__filled': fieldPosition7.length }"
+        >
+          @for (item of fieldPosition7; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+
+        <div
+          cdkDropList
+          #fieldList8="cdkDropList"
+          [cdkDropListData]="fieldPosition8"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList1,
+            fieldList2,
+            fieldList3,
+            fieldList4,
+            fieldList5,
+            fieldList6,
+            fieldList7,
+            fieldList9,
+            fieldList10,
+            fieldList11
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-8"
+          [ngClass]="{ 'field-position__filled': fieldPosition8.length }"
+        >
+          @for (item of fieldPosition8; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+
+        <div
+          cdkDropList
+          #fieldList9="cdkDropList"
+          [cdkDropListData]="fieldPosition9"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList1,
+            fieldList2,
+            fieldList3,
+            fieldList4,
+            fieldList5,
+            fieldList6,
+            fieldList7,
+            fieldList8,
+            fieldList10,
+            fieldList11
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-9"
+          [ngClass]="{ 'field-position__filled': fieldPosition9.length }"
+        >
+          @for (item of fieldPosition9; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+
+        <div
+          cdkDropList
+          #fieldList10="cdkDropList"
+          [cdkDropListData]="fieldPosition10"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList1,
+            fieldList2,
+            fieldList3,
+            fieldList4,
+            fieldList5,
+            fieldList6,
+            fieldList7,
+            fieldList8,
+            fieldList9,
+            fieldList11
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-10"
+          [ngClass]="{ 'field-position__filled': fieldPosition10.length }"
+        >
+          @for (item of fieldPosition10; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+
+        <div
+          cdkDropList
+          #fieldList11="cdkDropList"
+          [cdkDropListData]="fieldPosition11"
+          [cdkDropListConnectedTo]="[
+            playersList,
+            fieldList1,
+            fieldList2,
+            fieldList3,
+            fieldList4,
+            fieldList5,
+            fieldList6,
+            fieldList7,
+            fieldList8,
+            fieldList9,
+            fieldList10
+          ]"
+          (cdkDropListDropped)="drop($event)"
+          class="field-position player-11"
+          [ngClass]="{ 'field-position__filled': fieldPosition11.length }"
+        >
+          @for (item of fieldPosition11; track item) {
+          <div class="player-data" cdkDrag>
+            <div class="player-avatar">
+              <img
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <img
+                *cdkDragPreview
+                src="{{ item.photo }}"
+                alt="Football player"
+                class="player-data__img"
+              />
+              <div class="player-data__number">{{ item.number }}</div>
+            </div>
+            <div class="player-data__lastname">{{ item.lastName }}</div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
